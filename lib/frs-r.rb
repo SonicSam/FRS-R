@@ -3,14 +3,28 @@ require 'rubygems'
 require 'bundler/setup'
 Bundler.require
 
+class T
+    include Mongoid::Document
+end
+
 class FRSR < Sinatra::Base
-    
-    #configure do
-    #    MongoMapper.setup({'production' => {'uri' => ENV['MONGODB_URI']}}, 'production')
-    #end
+
+    set :environment, :production
+
+    configure do
+        Mongoid.load! 'lib/mongoid.yml', :production
+    end
     
     get '/' do
-        "Hello World"
+        T.create(
+          first_name: "Heinrich",
+          last_name: "Heine"
+        )
+    end
+    
+    get '/g/' do
+        
+        p "There are: " << T.count.to_s << " Dogs"
     end
     
 end
