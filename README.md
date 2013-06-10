@@ -1,5 +1,21 @@
-FRS-R
-===
-File and Folder Reservation System (Primarily used for torrenting)
+FRS-R (Ruby/Redux/Revolution/Ranjit) - File and Folder Reservation System
+=========================================================================
 
-Advanced readme coming soon...
+Description
+-----------
+
+Installation
+------------
+
+
+Example
+-------
+
+Plugins
+-------
+
+Authors
+-------
+
+Contribute
+----------
