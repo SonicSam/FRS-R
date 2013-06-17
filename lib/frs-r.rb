@@ -2,10 +2,7 @@
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require
-
-class T
-    include Mongoid::Document
-end
+require_rel './models'
 
 class FRSR < Sinatra::Base
 
@@ -16,15 +13,14 @@ class FRSR < Sinatra::Base
     end
     
     get '/' do
-        T.create(
-          first_name: "Heinrich",
-          last_name: "Heine"
+        User.create(
+          username: "Heinrich",
+          password_hash: "Heine"
         )
     end
     
-    get '/g/' do
-        
-        p "There are: " << T.count.to_s << " Dogs"
+    get '/test/' do
+        "There are: " << User.count.to_s << " Users"
     end
     
 end
