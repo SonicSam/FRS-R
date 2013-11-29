@@ -1,15 +1,15 @@
 #!env ruby
 require 'rubygems'
+
 require 'bundler/setup'
 Bundler.require
+
 require_rel './models'
 
 class FRSR < Sinatra::Base
 
-    set :environment, :production
-
     configure do
-        Mongoid.load! 'lib/mongoid.yml', :production
+        Mongoid.load! 'config/mongoid.yml', :production
     end
     
     get '/' do
@@ -24,5 +24,3 @@ class FRSR < Sinatra::Base
     end
     
 end
-
-FRSR.run!
