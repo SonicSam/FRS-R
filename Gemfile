@@ -19,7 +19,7 @@ gem 'haml'
 gem 'mongoid', '~>3.0.0'
 
 # Test requirements
-gem 'mocha', :group => 'test', :require => false
+gem 'mocha', :group => 'test', :require => 'mocha/api'
 gem 'minitest', '~>2.6.0', :require => 'minitest/autorun', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
 
