@@ -4,22 +4,22 @@ source 'https://rubygems.org'
 # gemspec
 
 # Server requirements
-# gem 'thin' # or mongrel
+gem 'thin' # or mongrel
 # gem 'trinidad', :platform => 'jruby'
 
 # Optional JSON codec (faster performance)
-# gem 'oj'
+gem 'oj'
 
 # Project requirements
 gem 'rake'
 
 # Component requirements
-gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'sass'
 gem 'haml'
 gem 'mongoid', '~>3.0.0'
 
 # Test requirements
+gem 'mocha', :group => 'test', :require => false
 gem 'minitest', '~>2.6.0', :require => 'minitest/autorun', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
 
@@ -33,6 +33,3 @@ gem 'padrino', '0.11.4'
 # %w(core gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.11.4'
 # end
-
-# Does this belong with component requirements?
-gem 'thin'

@@ -27,12 +27,10 @@
 #
 Padrino.configure_apps do
   # enable :sessions
-  set :session_secret, '4d6aa32146da7fb6e75175dca60cff8dc5b9406b33bc866724e8dfffd1955333'
+  set :session_secret, '0b39adc1e40f8121d6a4bfa2df93e3647862d8f9bb9bfb2118d3019373a7863b'
   set :protection, true
   set :protect_from_csrf, true
 end
 
 # Mounts the core application for this project
 Padrino.mount('FrsR::App', :app_file => Padrino.root('app/app.rb')).to('/')
-
-Padrino.mount("FrsR::Admin", :app_file => File.expand_path('../../admin/app.rb', __FILE__)).to("/admin")

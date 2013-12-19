@@ -1,10 +1,9 @@
 ---
 :orm: mongoid
 :test: minitest
-:mock: none
+:mock: mocha
 :script: jquery
 :renderer: haml
 :stylesheet: sass
 :namespace: FrsR
 :migration_format: number
-:admin_renderer: haml

@@ -3,12 +3,7 @@ class Release
   include Mongoid::Timestamps # adds created_at and updated_at fields
 
   # field <name>, :type => <type>, :default => <value>
-  field :name, :type => String
-  field :filesize, :type => Integer
-  field :numfiles, :type => Integer
   
-  has_and_belongs_to_many :accounts
-  has_many :comments
 
   # You can define indexes on documents using the index macro:
   # index :field <, :unique => true>
