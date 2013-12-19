@@ -1,0 +1,8 @@
+%ul.nav.nav-tabs
+  %li=link_to tag_icon(:list, pat(:list)), url(:releases, :index)
+  %li=link_to tag_icon(:plus, pat(:new)), url(:releases, :new)
+  %li.active=link_to tag_icon(:edit, pat(:edit)), url(:releases, :edit, :id => @release.id)
+
+.tabs-content
+  -form_for :release, url(:releases, :update, :id => @release.id), :method => :put, :class => 'form-horizontal' do |f|
+    =partial 'releases/form', :locals => { :f => f }
