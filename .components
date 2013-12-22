@@ -1,7 +1,7 @@
 ---
 :orm: mongoid
-:test: minitest
-:mock: mocha
+:test: none
+:mock: none
 :script: jquery
 :renderer: haml
 :stylesheet: sass
