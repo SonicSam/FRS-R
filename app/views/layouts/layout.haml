@@ -2,6 +2,11 @@
 %html
 	%head
 		%title=yield_content(:title)
-		=yield_content(:head)
+		%meta{:content => 'text/html; charset=utf-8', 'http-equiv' => 'Content-Type'}
+		%meta{:name => :viewport, :content => 'width=device-width,initial-scale=1'}
+		=stylesheet_link_tag (Padrino.env == :production ? 'bootstrap.min' : 'bootstrap')
+		=yield_content(:headAssets)
 	%body
 		=yield_content(:body)
+		
+		=javascript_include_tag 'jquery', 'jquery-ujs', (Padrino.env == :production ? 'bootstrap.min' : 'bootstrap'), 'application'

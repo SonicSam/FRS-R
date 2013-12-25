@@ -7,9 +7,37 @@ module FrsR
 
     enable :sessions
 	
+	use OmniAuth::Builder do
+		configure do |config|
+		  config.path_prefix = '/sessions'
+		end
+		provider :facebook, ENV['FACEBOOK_APPID'], ENV['FACEBOOK_SECRET'], {:client_options => {:ssl => {:verify => false}}}
+	end
+	
     get '/' do
-		haml :testLayoutPopulate
+		haml :homeScreen
     end
+	
+	helpers do
+  
+    # Login Helpers START
+	
+		def current_user
+			@current_user ||= User.find(session[:user_id])
+		end
+		
+		def signed_in?
+			!!current_user
+		end
+		
+		def current_user=(user)
+			@current_user = user
+			session[:user_id] = user.id
+		end
+    
+    # Login Helpers END
+		
+	end
 
     ##
     # Caching support.

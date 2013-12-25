@@ -17,3 +17,6 @@
 				%a(href='#') Ze princess Zerudah
 
 	=link_to image_tag('facebooklogin.png'), 'sessions/facebook'
+	- if signed_in?
+		"Signed in as:"
+		"#{current_user.to_json}"

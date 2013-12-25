@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 
 # Server requirements
 gem 'thin' # or mongrel
+gem 'foreman', '0.61'
 # gem 'trinidad', :platform => 'jruby'
 
 # Optional JSON codec (faster performance)
@@ -31,3 +32,8 @@ gem 'padrino', '0.11.4'
 # %w(core gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.11.4'
 # end
+
+# Omniauth
+gem 'omniauth'
+gem 'omniauth-facebook'
+#gem 'omniauth-???'
