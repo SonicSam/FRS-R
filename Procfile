@@ -1,1 +1,1 @@
-web: padrino s
+web: padrino s -p $PORT
